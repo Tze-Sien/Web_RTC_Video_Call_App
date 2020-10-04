@@ -8,19 +8,29 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Web RTC Simple App</a>
+        <div class="container">
+            <a class="navbar-brand" href="#" id="header">Web RTC Simple App</a>
+        </div>
     </nav>
-
-    <label for="yourId">Your ID:</label><br>
-    <textarea id="yourId"></textarea><br>
-    <label >Others ID:</label><br>
-    <textarea id="otherId"></textarea><br>
-    <button id="connect">Connect</button><br>
-
-    <label>Enter Message:</label><br>
-    <textarea id="yourMessage"></textarea><br>
-    <button id="send">Send</button>
-    <pre id="messages"></pre>
+    <div class="container my-5">
+        <div class="d-flex justify-content-around" id="flex">
+            <div>
+                <label for="yourId" id="myid">Your ID:</label><br>
+                <textarea id="yourId"></textarea><br>
+                <label id="peerid" >Others ID:</label><br>
+                <textarea id="otherId"></textarea><br>
+                <button class="mb-5 mt-2 btn btn-warning font-weight-bold" id="connect">Connect</button><br>
+                <div class="my-3">
+                    <label >Enter Message:</label><br>
+                    <textarea id="yourMessage"></textarea><br>
+                    <button class="btn btn-warning font-weight-bold" id="send">Send</button>
+                    <pre id="messages"></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 
     <!-- require module cannot executed if the javascript is not bundled -->
     <script src="bundled.js"></script>

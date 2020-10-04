@@ -10,6 +10,16 @@ navigator.getUserMedia({
         stream: stream
     });
 
+    if(location.hash === '#init'){
+        document.getElementById("header").innerHTML  += "(Host)"
+        document.getElementById("myid").innerHTML  += "<small>Send This id to Your Peers</small>"
+    }
+
+    if(location.hash !== '#init'){
+        document.getElementById("header").innerHTML  += "(Attendees)"
+        document.getElementById("peerid").innerHTML  += "<small>Paste host id here & click connect, send your id back to host</small>"
+    }
+
     peer.on('signal', function(data){
         document.getElementById('yourId').value = JSON.stringify(data)
     })
@@ -32,7 +42,8 @@ navigator.getUserMedia({
 
     peer.on('stream', function(stream){
         let video = document.createElement('video');
-        document.body.appendChild(video);
+        let flex = document.getElementById('flex');
+        flex.appendChild(video);
         video.srcObject = stream;
         video.play();
     })
