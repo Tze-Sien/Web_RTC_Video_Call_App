@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "budo index.js:bundled.js --ssl"
+    "start": "budo index.js:bundled.js"
   },
   "author": "",
   "license": "ISC",
